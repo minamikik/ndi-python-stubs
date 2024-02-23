@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ndi-python-stubs"
+version = "0.5.0"
+description = "Type stubs for ndi-python"
+authors = [{ name = "minamikik", email = "mia@sync.dev" }]
+readme = "README.md"
+license = { file="LICENSE" }
+keywords = ["ndi", "pyi", "stubs", "type-hints"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Typing :: Typed"
+]
+dependencies = [
+    "ndi-python",
+    "numpy"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["NDIlib"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+NDIlib = ["*.pyi", "py.typed"]
